@@ -43,6 +43,18 @@
 @nigeria       = Nation.create name: "Nigeria", profile: "Nigeria"
 
 
+@arena_de_saopaulo = Stadium.create name: "Arena de Sao Paulo", capacity: 65.807, city: "Sao Paulo"
+@estadio_mineirao = Stadium.create name: "Estadio Mineirao", capacity: 62.547, city: "Belo Horizonte"
+@estadio_castelao = Stadium.create name: "Estadio Castelao", capacity: 64.846, city: "Fortaleza"
+@estadio_do_maracana = Stadium.create name: "Estadio Do Maracana", capacity: 76.804, city: "Rio de Janeiro"
+@estadio_nacional = Stadium.create name: "Estadio Nacional", capacity: 68.009, city: "Brasilia"
+@arena_pernambuco = Stadium.create name: "Arena Pernambuco", capacity: 44.248, city: "Recife"
+@arena_fonte_nova = Stadium.create name: "Arena Fonte Nova", capacity: 48.747, city: "Salvador"
+@estadio_pantanal = Stadium.create name: "Estadio Pantanal", capacity: 42.968, city: "Cuiaba"
+@estadio_da_baixada = Stadium.create name: "Estadio Da Baixada", capacity: 41.456, city: "Curitiba"
+@estadio_amazonia = Stadium.create name: "Estadio Amazonia", capacity: 42.374, city: "Manaus"
+@estadio_das_dunas = Stadium.create name: "Estadio Das Dunas", capacity: 42.086, city: "Natal"
+@estadio_beira_rio = Stadium.create name: "Estadio Beira-Rio", capacity: 48.849, city: "Porto Alegre"
 
 
 
