@@ -1,0 +1,104 @@
+jadwal pertandingan 
+team profil
+hasil pertandingan 
+system login
+
+1 Negara punya banyak Pemain | 1 Pemain punya 1 negara
+1 Negara punya 1 grup | Banyak grup punya banyak negara
+1 Negara Punya 1 pelatih | 1 Pelatih punya 1 negara
+
+1Grup punya banyak negara
+
+Nation
+ID Nation
+Name
+Julukan
+Presiden
+Berdiri
+Prestasi
+1 ID_Coach
+
+Group 
+  ID_Nation
+  Name
+
+Coach_Profile
+  ID_Nation
+  Nama
+  Tanggal Lahir
+  Negara
+  Tinggi Badan
+  Berat Badan
+  Prestasi
+
+Player
+  ID_Nation
+  Nama
+  Tanggal Lahir
+  Tempat Lahir
+  Negara
+  Tinggi badan
+  Berat badan
+  NoPunggung(Limitasi 1-23)
+
+  ID_Position
+  
+
+Position
+  ID_Position
+  Name
+
+Referee
+  ID_Referee
+  Name
+  Nation
+
+Stadium
+  ID_Stadium
+  Name
+  Capacity
+  City
+
+Clasement
+  ID_Nation 
+  Win
+  Draw
+  Lost
+  Pts  
+
+Pertandingan
+  Tanggal
+  Home -> id_nation 
+  Away -> id_nation
+  ScoreHome
+  ScoreAway
+
+Detail_Pertandingan
+  ID_Pertandingan
+  Description
+  
+  Goal id_player, menit
+  Yellow id_player, menit
+  Red id_player, menit
+
+  Fouls
+  Offsides
+  Shots On Target
+  Shots Off Target
+  Blocked Shots
+  Corners
+  Crosses
+  Posession - Max Value 100%
+
+Event Detail
+  ID_Event
+  ID_Detail_Pertandingan
+  ID_Player
+  ID_Event
+  Menit
+  
+
+Event
+1 GOAl
+2 YELLOW
+3 RED

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date_of_birth: 2013-12-09
+  place_of_birth: MyString
+  country: MyString
+  height: 1
+  weight: 1
+  back_number: 1
+
+two:
+  name: MyString
+  date_of_birth: 2013-12-09
+  place_of_birth: MyString
+  country: MyString
+  height: 1
+  weight: 1
+  back_number: 1
