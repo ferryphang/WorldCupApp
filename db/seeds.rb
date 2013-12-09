@@ -56,9 +56,3 @@
 @estadio_das_dunas   = Stadium.create name: "Estadio Das Dunas", capacity: 42.086, city: "Natal"
 @estadio_beira_rio   = Stadium.create name: "Estadio Beira-Rio", capacity: 48.849, city: "Porto Alegre"
 
-
-
-
-
-
- # @coach = Coaches.create name: 
