@@ -1,4 +1,4 @@
 class Coach < ActiveRecord::Base
-  #1 to 1
+	# Pelatih hanya melatih satu negara
   belongs_to :nation
 end
