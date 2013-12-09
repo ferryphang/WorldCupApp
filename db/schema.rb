@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20131209090628) do
 
   create_table "event_details", force: true do |t|
     t.integer  "match_detail_id"
-    t.integer  "player_id"
     t.integer  "event_id"
     t.integer  "minutes"
     t.datetime "created_at"
@@ -48,10 +47,8 @@ ActiveRecord::Schema.define(version: 20131209090628) do
 
   create_table "match_details", force: true do |t|
     t.integer  "match_id"
+    t.string   "type"
     t.text     "description"
-    t.integer  "goal"
-    t.integer  "yellow"
-    t.integer  "red"
     t.integer  "fouls"
     t.integer  "offsides"
     t.integer  "shots_on_target"
@@ -66,8 +63,8 @@ ActiveRecord::Schema.define(version: 20131209090628) do
 
   create_table "matches", force: true do |t|
     t.date     "date"
-    t.string   "home"
-    t.string   "away"
+    t.integer  "home"
+    t.integer  "away"
     t.integer  "score_home"
     t.integer  "score_away"
     t.datetime "created_at"

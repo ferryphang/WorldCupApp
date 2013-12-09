@@ -11,5 +11,5 @@ class Match < ActiveRecord::Base
   belongs_to :away_team, class_name: 'Nation', foreign_key: :away
  
   has_one :home_match_detail, class_name: 'MatchDetail', conditions: { type: 'home' }
-
+  has_one :away_match_detail, class_name: 'MatchDetail', conditions: { type: 'away' }
 end
