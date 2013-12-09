@@ -56,3 +56,10 @@
 @estadio_das_dunas   = Stadium.create name: "Estadio Das Dunas", capacity: 42.086, city: "Natal"
 @estadio_beira_rio   = Stadium.create name: "Estadio Beira-Rio", capacity: 48.849, city: "Porto Alegre"
 
+@g_a = Group.create name: "A"
+@g_b = Group.create name: "B"
+@g_c = Group.create name: "C"
+@g_d = Group.create name: "D"
+@g_e = Group.create name: "E"
+@g_f = Group.create name: "F"
+@g_g = Group.create name: "G"
