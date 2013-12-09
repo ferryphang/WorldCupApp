@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  goal: 1
+  yellow: 1
+  red: 1
+  fouls: 1
+  offsides: 1
+  shots_on_target: 1
+  shots_off_target: 1
+  blocked_shots: 1
+  corners: 1
+  crosses: 1
+  possesion: 1
+
+two:
+  description: MyText
+  goal: 1
+  yellow: 1
+  red: 1
+  fouls: 1
+  offsides: 1
+  shots_on_target: 1
+  shots_off_target: 1
+  blocked_shots: 1
+  corners: 1
+  crosses: 1
+  possesion: 1
