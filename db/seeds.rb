@@ -6,41 +6,41 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# NEGARA 32
+# @australia     = Nation.create name: "Australia", profile: "Australia profile"
+# @iran          = Nation.create name: "Iran", profile: "Iran profile"
+# @japan         = Nation.create name: "Japan", profile: "brazil profile"
+# @south_korea   = Nation.create name: "South_korea", profile: "South_korea profile"
 
-@australia     = Nation.create name: "Australia", profile: "Australia profile"
-@iran          = Nation.create name: "Iran", profile: "Iran profile"
-@japan         = Nation.create name: "Japan", profile: "brazil profile"
-@south_korea   = Nation.create name: "South_korea", profile: "South_korea profile"
+# @costa_rica    = Nation.create name: "Costa Rica", profile: "Costa Rica profile"
+# @honduras      = Nation.create name: "Honduras", profile: "Honduras profile"
+# @mexico        = Nation.create name: "Mexico", profile: "Mexico profile"
+# @united_state  = Nation.create name: "United State", profile: "United State profile"
+# @belgium       = Nation.create name: "Belgium", profile: "Belgium profile"
+# @bosnia        = Nation.create name: "Bosnia", profile: "Bosnia profile"
+# @croatia       = Nation.create name: "Croatia", profile: "Croatia profile"
+# @england       = Nation.create name: "England", profile: "England profile"
+# @france        = Nation.create name: "France", profile: "France profile"
+# @Germany       = Nation.create name: "Germany", profile: "Costa Rica profile"
+# @greece        = Nation.create name: "Greece", profile: "Greece profile"
+# @italy         = Nation.create name: "Italy", profile: "Italy profile"
+# @netherlands   = Nation.create name: "Netherlands", profile: "Netherlands profile"
+# @portugal      = Nation.create name: "Portugal", profile: "Portugal profile"
+# @spain         = Nation.create name: "Spain", profile: "Spain profile"
+# @switzerland   = Nation.create name: "Switzerland", profile: "Switzerland profile"
 
-@costa_rica    = Nation.create name: "Costa Rica", profile: "Costa Rica profile"
-@honduras      = Nation.create name: "Honduras", profile: "Honduras profile"
-@mexico        = Nation.create name: "Mexico", profile: "Mexico profile"
-@united_state  = Nation.create name: "United State", profile: "United State profile"
-@belgium       = Nation.create name: "Belgium", profile: "Belgium profile"
-@bosnia        = Nation.create name: "Bosnia", profile: "Bosnia profile"
-@croatia       = Nation.create name: "Croatia", profile: "Croatia profile"
-@england       = Nation.create name: "England", profile: "England profile"
-@france        = Nation.create name: "France", profile: "France profile"
-@Germany       = Nation.create name: "Germany", profile: "Costa Rica profile"
-@greece        = Nation.create name: "Greece", profile: "Greece profile"
-@italy         = Nation.create name: "Italy", profile: "Italy profile"
-@netherlands   = Nation.create name: "Netherlands", profile: "Netherlands profile"
-@portugal      = Nation.create name: "Portugal", profile: "Portugal profile"
-@spain         = Nation.create name: "Spain", profile: "Spain profile"
-@switzerland   = Nation.create name: "Switzerland", profile: "Switzerland profile"
+# @argentina     = Nation.create name: "Russia", profile: "Russia profile"
+# @brazil        = Nation.create name: "Brazil", profile: "Brazil profile"
+# @chile         = Nation.create name: "Chile", profile: "Chile profile"
+# @colombia      = Nation.create name: "Colombia", profile: "Colombia profile"
+# @ecuador       = Nation.create name: "Ecuador", profile: "Ecuador profile"
+# @uruguay       = Nation.create name: "Uruguay", profile: "Uruguay profile"
 
-@argentina     = Nation.create name: "Russia", profile: "Russia profile"
-@brazil        = Nation.create name: "Brazil", profile: "Brazil profile"
-@chile         = Nation.create name: "Chile", profile: "Chile profile"
-@colombia      = Nation.create name: "Colombia", profile: "Colombia profile"
-@ecuador       = Nation.create name: "Ecuador", profile: "Ecuador profile"
-@uruguay       = Nation.create name: "Uruguay", profile: "Uruguay profile"
-
-@algeria       = Nation.create name: "Algeria", profile: "Algeria profile"
-@cameroon      = Nation.create name: "Cameroon", profile: "Cameroon profile"
-@ghana         = Nation.create name: "Ghana", profile: "Ghana profile"
-@ivory_coast   = Nation.create name: "Ivory Coast", profile: "Ivory Coast profile"
-@nigeria       = Nation.create name: "Nigeria", profile: "Nigeria"
+# @algeria       = Nation.create name: "Algeria", profile: "Algeria profile"
+# @cameroon      = Nation.create name: "Cameroon", profile: "Cameroon profile"
+# @ghana         = Nation.create name: "Ghana", profile: "Ghana profile"
+# @ivory_coast   = Nation.create name: "Ivory Coast", profile: "Ivory Coast profile"
+# @nigeria       = Nation.create name: "Nigeria", profile: "Nigeria"
 
 
 @arena_de_saopaulo   = Stadium.create name: "Arena de Sao Paulo", capacity: 65.807, city: "Sao Paulo"
@@ -121,3 +121,29 @@
 @dick     = Referee.create name: "Dick", nation: "Australia"
 @lane     = Referee.create name: "Lane", nation: "Australia"
 @clark    = Referee.create name: "Clack", nation: "Australia"
+
+require 'open-uri'
+team_id = [43843,43922,43976,43924,43849,43925,43854,43941,43942,43946,43948,43860,43949,43909,43954,43819,43821,43822,43911,43960,43978,43876,43928,43963,1902465,44002,43968,43883,43969,43971,43930,43921]
+team_id.each_with_index do |id,index|
+  url = "http://www.fifa.com/worldcup/archive/southafrica2010/teams/team=#{id}/profile.html"
+  
+  prof = Nokogiri::HTML(open(url))
+  nation = Nation.create name: prof.css("div.firstTeamName").text, profile: prof.css("div.articleBody").children.text
+
+    url = "http://www.fifa.com/worldcup/archive/southafrica2010/teams/team=#{id}/squadlist.html"
+    doc = Nokogiri::HTML(open(url))
+    doc.css("table.teamstat tr").each do |tr|
+      scrap = tr.css("td")
+        back_number = scrap[0].text
+        name = scrap[1].text
+        date_of_birth = scrap[2].text
+        al = scrap[3].text
+        pos = Position.find_by pos: al
+        height = scrap[5].text
+        weight = rand(70..90)
+
+        puts nation.players.create position_id: pos.id , name: name, date_of_birth: date_of_birth, back_number: back_number, height: height, weight: weight
+
+    end
+
+end

@@ -1,0 +1,20 @@
+
+
+require 'nokogiri'
+require 'open-uri'
+
+url = "http://www.fifa.com/worldcup/archive/southafrica2010/teams/team=43843/squadlist.html"
+doc = Nokogiri::HTML(open(url))
+doc.css("table.teamstat tr").each do |tr|
+  scrap = tr.css("td.l")
+  back_number = scrap[0].text
+  name = scrap[1].text
+  date_of_birth = scrap[2].text
+  al = scrap[3].text
+  pos = Position.find_by pos: al.id
+  
+  height = scrap[5].text
+  place_of_birth = //self.nation
+  weight = 70
+  @australia.players.create position_id: pos.id , name: name, date_of_birth: date_of_birth, back_number: back_number
+end

@@ -1,11 +1,9 @@
 class Match < ActiveRecord::Base
   # Sebuah pertandingan sudah pasti hanya memiliki satu wasit
-  has_one :matches_referee
-  has_one :referee, through: :matches_referee
+  belongs_to :referee
 
   # Sebuah pertandingan sudah pasti hanya memiliki satu stadium
-  has_one :matches_stadium
-  has_one :stadium, through: :matches_stadium
+  belongs_to :stadium
  
   # Satu Pertandingan hanya memiliki satu negara home
   # Satu Pertandingan hanya memiliki satu negara away

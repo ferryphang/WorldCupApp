@@ -4,12 +4,10 @@ class Nation < ActiveRecord::Base
   # Sebuah negara memiliki banyak pemain
   has_many :players
 
-  # Sebuah negara hanya terdapat pada satu grup pada pertandingan
-  has_one :nations_group
-  has_one :group, through: :nations_group
-
-  # Sebuah negara hanya memiliki satu klasmen
-  has_one :standing
+  # Sebuah negara memiliki satu membership
+  has_one :member
+  has_one :group, through: :member
+  
 
   # Sebuah negara memiliki banyak pertandingan yang dimana dicari berdasarkan id_nation == Match.home (home/away)
   # Dipanggil Nation.home_matches

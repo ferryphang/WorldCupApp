@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131210080632) do
+ActiveRecord::Schema.define(version: 20131210102711) do
 
   create_table "coaches", force: true do |t|
     t.integer  "nation_id"
@@ -69,18 +69,16 @@ ActiveRecord::Schema.define(version: 20131210080632) do
     t.integer  "score_away"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "matches_referees", force: true do |t|
-    t.integer  "match_id"
     t.integer  "referee_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "stadium_id"
   end
 
-  create_table "matches_stadium", force: true do |t|
-    t.integer  "match_id"
-    t.integer  "stadium_id"
+  create_table "members", force: true do |t|
+    t.integer  "group_id"
+    t.integer  "nation_id"
+    t.integer  "win"
+    t.integer  "draw"
+    t.integer  "lose"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -88,13 +86,6 @@ ActiveRecord::Schema.define(version: 20131210080632) do
   create_table "nations", force: true do |t|
     t.string   "name"
     t.text     "profile"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "nations_groups", force: true do |t|
-    t.integer  "nation_id"
-    t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -118,13 +109,6 @@ ActiveRecord::Schema.define(version: 20131210080632) do
     t.datetime "updated_at"
   end
 
-  create_table "players_positions", force: true do |t|
-    t.integer  "player_id"
-    t.integer  "position_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "positions", force: true do |t|
     t.string   "name"
     t.string   "pos"
@@ -133,7 +117,6 @@ ActiveRecord::Schema.define(version: 20131210080632) do
   end
 
   create_table "referees", force: true do |t|
-    t.integer  "nation_id"
     t.string   "name"
     t.string   "nation"
     t.datetime "created_at"
@@ -144,15 +127,6 @@ ActiveRecord::Schema.define(version: 20131210080632) do
     t.string   "name"
     t.integer  "capacity"
     t.string   "city"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "standings", force: true do |t|
-    t.integer  "nation_id"
-    t.integer  "win"
-    t.integer  "draw"
-    t.integer  "lost"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

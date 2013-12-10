@@ -3,8 +3,7 @@ class Player < ActiveRecord::Base
   belongs_to :nation
   
   # Seorang pemain hanya memiliki satu posisi pada permainan
-  has_one :players_position
-  has_one :position, through: :players_position
+  belongs_to :position
 
   # Sebuah pemain menghasilkan banyak event details pada satu / banyak pertandingan baik itu
   # Dia berhasil mencetak gol sebanyak n kali
