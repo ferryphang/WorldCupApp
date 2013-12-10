@@ -6,9 +6,6 @@ gem 'rails', '4.0.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
-# Authentication gem
-gem 'devise'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -35,7 +32,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-
+# Added by Ourselves
+gem 'devise'
+gem 'bootstrap-sass','~> 3.0.3.0'   
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
