@@ -66,4 +66,3 @@
 
 
 @GK = Position.create name: "Goal Keeper", pos: "GK"
-
