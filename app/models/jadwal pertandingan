@@ -103,3 +103,7 @@ Event
 1 GOAl
 2 YELLOW
 3 RED
+
+doc.css("table.teamstat tr").each do |tr|
+  puts tr.css("td.l").text
+end
