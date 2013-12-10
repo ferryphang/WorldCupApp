@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131210015839) do
+ActiveRecord::Schema.define(version: 20131210045910) do
 
   create_table "coaches", force: true do |t|
     t.integer  "nation_id"
@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 20131210015839) do
 
   create_table "positions", force: true do |t|
     t.string   "name"
-    t.string   "alias"
+    t.string   "pos"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

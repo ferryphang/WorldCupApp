@@ -63,3 +63,7 @@
 @g_e = Group.create name: "E"
 @g_f = Group.create name: "F"
 @g_g = Group.create name: "G"
+
+
+@GK = Positions.create name: "Goal Keeper" pos: "GK"
+
