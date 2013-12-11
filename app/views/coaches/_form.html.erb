@@ -11,7 +11,35 @@
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="actions"> 
+    <p>
+      <%= f.label :nation %>
+      <%= f.collection_select(:nation_id, Nation.all, :id, :name) %>
+    </p>
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :date_of_birth %>
+      <%= f.text_field :date_of_birth %>
+    </p>
+    <p>
+      <%= f.label :country %>
+      <%= f.text_field :country %>
+    </p>
+    <p>
+      <%= f.label :height %>
+      <%= f.text_field :height %>
+    </p>
+    <p>
+      <%= f.label :weight %>
+      <%= f.text_field :weight %>
+    </p>
+    <p>
+      <%= f.label :achievement %>
+      <%= f.text_area :achievement %>
+    </p>
     <%= f.submit %>
   </div>
 <% end %>
