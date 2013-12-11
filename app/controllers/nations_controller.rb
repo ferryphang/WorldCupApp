@@ -69,6 +69,6 @@ class NationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nation_params
-      params[:nation]
+      params[:nation].permit(:name,:profile)
     end
 end

@@ -14,4 +14,6 @@ class Nation < ActiveRecord::Base
   has_many :home_matches, class_name: 'Match', foreign_key: :home
   has_many :away_matches, class_name: 'Match', foreign_key: :away
 
+  validates :name , presence:true, uniqueness: true
+  validates :profile, presence:true, length: { minimum: 10 }
 end

@@ -71,32 +71,38 @@
 @FW = Position.create name: "F Winger", pos: "FW"
 
 
-@tonydungy  = Coach.create name: "Tony Dungy", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@changailey = Coach.create name: "Chan Gailey", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@thomas     = Coach.create name: "Thomas", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@wenger     = Coach.create name: "Wenger", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@tommy      = Coach.create name: "Tommy", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@tomshon    = Coach.create name: "Tomshon", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@danny      = Coach.create name: "Danny", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@dedy       = Coach.create name: "Dedy", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@park       = Coach.create name: "Park", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"  
-@gibran     = Coach.create name: "Gibran", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@jhon       = Coach.create name: "Jhon", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@wiliam     = Coach.create name: "Wiliam", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@frank      = Coach.create name: "Frank", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@jonas      = Coach.create name: "Jonas", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@vucivic    = Coach.create name: "Vucivic", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@rield      = Coach.create name: "Rield", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@paul       = Coach.create name: "Paul", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@mike       = Coach.create name: "Mike", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@dommy      = Coach.create name: "Dommy", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@gibs       = Coach.create name: "Gibs", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@ballack    = Coach.create name: "Ballack", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@moriho     = Coach.create name: "Moriho", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@fergie     = Coach.create name: "Fergie", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@neuer      = Coach.create name: "Neuer", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@vangrik    = Coach.create name: "Van Grik", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
-@phil       = Coach.create name: "Phil", date_of_birth: "2007, 5, 12", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@tonydungy  = Coach.create name: "Tony Dungy", date_of_birth: "1978-02-21", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@changailey = Coach.create name: "Chan Gailey", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@thomas     = Coach.create name: "Thomas", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@wenger     = Coach.create name: "Wenger", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@tommy      = Coach.create name: "Tommy", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@tomshon    = Coach.create name: "Tomshon", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@danny      = Coach.create name: "Danny", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@dedy       = Coach.create name: "Dedy", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@park       = Coach.create name: "Park", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"  
+@gibran     = Coach.create name: "Gibran", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@jhon       = Coach.create name: "Jhon", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@wiliam     = Coach.create name: "Wiliam", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@frank      = Coach.create name: "Frank", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@jonas      = Coach.create name: "Jonas", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@vucivic    = Coach.create name: "Vucivic", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@rield      = Coach.create name: "Rield", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@paul       = Coach.create name: "Paul", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@mike       = Coach.create name: "Mike", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@dommy      = Coach.create name: "Dommy", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@gibs       = Coach.create name: "Gibs", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@ballack    = Coach.create name: "Ballack", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@moriho     = Coach.create name: "Moriho", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@fergie     = Coach.create name: "Fergie", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@neuer      = Coach.create name: "Neuer", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@vangrik    = Coach.create name: "Van Grik", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@green      = Coach.create name: "Green", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@hauston    = Coach.create name: "Hauston", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@andy       = Coach.create name: "Andy", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@marvin     = Coach.create name: "Marvin", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@wade       = Coach.create name: "Wade", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@greg       = Coach.create name: "Greg", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@bruce      = Coach.create name: "Bruce", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
 
 
 
@@ -123,11 +129,11 @@
 @clark    = Referee.create name: "Clack", nation: "Australia"
 
 require 'open-uri'
-team_id = [43843,43922,43976,43924,43849,43925,43854,43941,43942,43946,43948,43860,43949,43909,43954,43819,43821,43822,43911,43960,43978,43876,43928,43963,1902465,44002,43968,43883,43969,43971,43930,43921]
+# team_id = [43843,43922,43976,43924,43849,43925,43854,43941,43942,43946,43948,43860,43949,43909,43954,43819,43821,43822,43911,43960,43978,43876,43928,43963,1902465,44002,43968,43883,43969,43971,43930,43921]
+team_id = [43883,43930,43946,43911]
+
 team_id.each_with_index do |id,index|
-  url = "http://www.fifa.com/worldcup/archive/southafrica2010/teams/team=#{id}/profile.html"
-  
-  prof = Nokogiri::HTML(open(url))
+  prof = Nokogiri::HTML(open("http://www.fifa.com/worldcup/archive/southafrica2010/teams/team=#{id}/profile.html"))
   nation = Nation.create name: prof.css("div.firstTeamName").text, profile: prof.css("div.articleBody").children.text
 
     url = "http://www.fifa.com/worldcup/archive/southafrica2010/teams/team=#{id}/squadlist.html"
@@ -145,5 +151,21 @@ team_id.each_with_index do |id,index|
         puts nation.players.create position_id: pos.id , name: name, date_of_birth: date_of_birth, back_number: back_number, height: height, weight: weight
 
     end
-
 end
+
+1.upto(team_id.count) do |i|
+    Nation.find(i).coach = Coach.find(i)
+end
+
+ga = Group.first
+a = Nation.find_by name: "South Africa"
+b = Nation.find_by name: "Uruguay"
+c = Nation.find_by name: "France"
+d = Nation.find_by name: "Mexico"
+ga.nations << a
+ga.nations << b
+ga.nations << c
+ga.nations << d
+
+
+
