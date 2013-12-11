@@ -1,20 +1,44 @@
 <h1>Listing coaches</h1>
+<%= link_to 'New Coach', new_coach_path %>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>No</th>
+      <th>Nation</th>
+      <th>Name</th>
+      <th>Date of Birth</th>
+      <th>Country</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Achievement</th>
+      <th>Action</th>
+
     </tr>
   </thead>
 
   <tbody>
     <% @coaches.each do |coach| %>
       <tr>
-        <td><%= link_to 'Show', coach %></td>
-        <td><%= link_to 'Edit', edit_coach_path(coach) %></td>
-        <td><%= link_to 'Destroy', coach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= coach.id %></td>
+
+          <% if coach.nation %>
+            <td><%= coach.nation.name %></td>
+          <% else %>
+            <td>No Nation</td>
+          <% end %>
+
+        <td><%= coach.name %></td>
+        <td><%= coach.date_of_birth %></td>
+        <td><%= coach.country %></td>
+        <td><%= coach.height %></td>
+        <td><%= coach.weight %></td>
+        <td><%= coach.achievement %></td>
+        <td>
+          <%= link_to 'Show', coach %> |
+          <%= link_to 'Edit', edit_coach_path(coach) %> |
+          <%= link_to 'Destroy', coach, method: :delete, data: { confirm: 'Are you sure?' } %> 
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +46,4 @@
 
 <br>
 
-<%= link_to 'New Coach', new_coach_path %>
+

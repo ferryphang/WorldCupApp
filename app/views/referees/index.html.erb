@@ -1,0 +1,31 @@
+<h1>Listing referees</h1>
+<%= link_to 'New Referee', new_referee_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>Nation</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @referees.each do |referee| %>
+      <tr>
+      <td><%= referee.id %></td>
+      <td><%= referee.name %></td>
+      <td><%= referee.nation %> </td>
+        <td>
+          <%= link_to 'Show', referee %> |
+          <%= link_to 'Edit', edit_referee_path(referee) %> |
+          <%= link_to 'Destroy', referee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

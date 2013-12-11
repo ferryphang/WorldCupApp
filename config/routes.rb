@@ -1,7 +1,7 @@
 WorldCupApp::Application.routes.draw do
   root 'nations#index'
   devise_for :users
-  resources :nations, :players
+  resources :nations, :players, :coaches, :referees, :stadiums
 end  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

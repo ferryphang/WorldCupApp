@@ -1,0 +1,35 @@
+<h1>Listing stadiums</h1>
+<%= link_to 'New Stadium', new_stadium_path %>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>Capacity</th>
+      <th>City</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stadiums.each do |stadium| %>
+      <tr>
+        <td><%= stadium.id %></td>
+        <td><%= stadium.name %></td>
+        <td><%= stadium.capacity %></td>
+        <td><%= stadium.city %></td>
+        <td>
+          <%= link_to 'Show', stadium %> |
+          <%= link_to 'Edit', edit_stadium_path(stadium) %> |
+          <%= link_to 'Destroy', stadium, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
