@@ -17,4 +17,12 @@ class Match < ActiveRecord::Base
   # 2. detail pertandingan bagi away
   has_one :home_match_detail, class_name: 'MatchDetail', conditions: { type: 'home' }
   has_one :away_match_detail, class_name: 'MatchDetail', conditions: { type: 'away' }
+
+  after_update :update_members
+
+
+  def update_members
+    home_team.standing.update_statistic && away_team.standing.update_statistic
+  end
+
 end

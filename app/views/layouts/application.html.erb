@@ -23,11 +23,14 @@
             <li>
               <%= link_to 'Players', players_path %>
             </li>
+            <li>
+              <%= link_to 'Group', groups_path %>
+            </li>
             <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Matches<strong class="caret"></strong></a>
               <ul class="dropdown-menu">
                 <li>
-                  <a href="#">Group Stage</a>
+                  <%= link_to 'Group Stage', matches_path %>
                 </li>
                 <li>
                   <a href="#">Second Stage</a>

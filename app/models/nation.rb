@@ -5,8 +5,8 @@ class Nation < ActiveRecord::Base
   has_many :players
 
   # Sebuah negara memiliki satu membership
-  has_one :member
-  has_one :group, through: :member
+  has_one :standing
+  has_one :group, through: :standing
   
 
   # Sebuah negara memiliki banyak pertandingan yang dimana dicari berdasarkan id_nation == Match.home (home/away)

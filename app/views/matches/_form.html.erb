@@ -12,6 +12,28 @@
   <% end %>
 
   <div class="actions">
+    <p>
+      <%= f.label :date %>
+      <%= f.date_field :date %>
+    </p>
+    <p>
+      <%= f.label :home %>
+      <%= f.collection_select(:home, Nation.all, :id, :name) %>
+      VS
+       <%= f.label :away %>
+      <%= f.collection_select(:away, Nation.all, :id, :name) %>
+    </p>
+    <p>
+      <%= f.label :score_home %>
+      <%= f.text_field :score_home %>
+    </p>
+    <p>
+      <%= f.label :score_away %>
+      <%= f.text_field :score_away %>
+    </p>
+    <p>
+     
+    </p>
     <%= f.submit %>
   </div>
 <% end %>

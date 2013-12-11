@@ -73,16 +73,6 @@ ActiveRecord::Schema.define(version: 20131210102711) do
     t.integer  "stadium_id"
   end
 
-  create_table "members", force: true do |t|
-    t.integer  "group_id"
-    t.integer  "nation_id"
-    t.integer  "win",        default: 0
-    t.integer  "draw",       default: 0
-    t.integer  "lose",       default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "nations", force: true do |t|
     t.string   "name"
     t.text     "profile"
@@ -127,6 +117,16 @@ ActiveRecord::Schema.define(version: 20131210102711) do
     t.string   "name"
     t.integer  "capacity"
     t.string   "city"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "standings", force: true do |t|
+    t.integer  "group_id"
+    t.integer  "nation_id"
+    t.integer  "win",        default: 0
+    t.integer  "draw",       default: 0
+    t.integer  "lose",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -27,7 +27,7 @@
         <td><%= player.date_of_birth %></td>
         <td><%= player.height %></td>
         <td><%= player.weight %></td>
-        <td><span class="<%= position(player.position_id) %>"><%= player.position.name %></span></td>
+        <td><span class="<%= position(player.position_id) %>"><%= player.position.pos %></span></td>
         <td><%= player.back_number %></td>
         <td><%= link_to 'Show', player %></td>
         <td><%= link_to 'Edit', edit_player_path(player) %></td>

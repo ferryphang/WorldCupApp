@@ -68,7 +68,7 @@
 @GK = Position.create name: "Goal Keeper", pos: "GK"
 @DF = Position.create name: "Defender Foward", pos: "DF"
 @MF = Position.create name: "Mid Foward", pos: "MF"
-@FW = Position.create name: "F Winger", pos: "FW"
+@FW = Position.create name: "Forward Winger", pos: "FW"
 
 
 @tonydungy  = Coach.create name: "Tony Dungy", date_of_birth: "1978-02-21", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
@@ -133,24 +133,31 @@ require 'open-uri'
 team_id = [43883,43930,43946,43911]
 
 team_id.each_with_index do |id,index|
+  puts '-' * 100
   prof = Nokogiri::HTML(open("http://www.fifa.com/worldcup/archive/southafrica2010/teams/team=#{id}/profile.html"))
-  nation = Nation.create name: prof.css("div.firstTeamName").text, profile: prof.css("div.articleBody").children.text
+  nation = Nation.create name: prof.css("div.firstTeamName").text, 
+                         profile: prof.css("div.articleBody").children.text
+  puts "# #{nation.name}"
 
-    url = "http://www.fifa.com/worldcup/archive/southafrica2010/teams/team=#{id}/squadlist.html"
-    doc = Nokogiri::HTML(open(url))
-    doc.css("table.teamstat tr").each do |tr|
-      scrap = tr.css("td")
-        back_number = scrap[0].text
-        name = scrap[1].text
-        date_of_birth = scrap[2].text
-        al = scrap[3].text
-        pos = Position.find_by pos: al
-        height = scrap[5].text
-        weight = rand(70..90)
+  url = "http://www.fifa.com/worldcup/archive/southafrica2010/teams/team=#{id}/squadlist.html"
+  doc = Nokogiri::HTML(open(url))
+  doc.css("table.teamstat tr").each do |tr|
+    scrap = tr.css("td")
+    back_number = scrap[0].text
+    name = scrap[1].text
+    date_of_birth = scrap[2].text
+    al = scrap[3].text
+    pos = Position.find_by pos: al
+    height = scrap[5].text
+    weight = rand(70..90)
 
-        puts nation.players.create position_id: pos.id , name: name, date_of_birth: date_of_birth, back_number: back_number, height: height, weight: weight
-
-    end
+    player = nation.players.create position_id: pos.id , 
+                                   name: name, 
+                                   date_of_birth: date_of_birth, 
+                                   back_number: back_number, 
+                                   height: height, weight: weight
+    puts "-- #{player.name}"
+  end
 end
 
 1.upto(team_id.count) do |i|
@@ -158,14 +165,22 @@ end
 end
 
 ga = Group.first
-a = Nation.find_by name: "South Africa"
-b = Nation.find_by name: "Uruguay"
-c = Nation.find_by name: "France"
-d = Nation.find_by name: "Mexico"
-ga.nations << a
-ga.nations << b
-ga.nations << c
-ga.nations << d
+africa = Nation.find_by name: "South Africa"
+uruguay = Nation.find_by name: "Uruguay"
+france = Nation.find_by name: "France"
+mexico = Nation.find_by name: "Mexico"
+ga.nations << africa
+ga.nations << uruguay
+ga.nations << france
+ga.nations << mexico
+
+
+Match.create date: Date.today,home: africa.id, away: mexico.id, referee_id: @hunk.id, stadium_id: @arena_de_saopaulo.id
+Match.create date: Date.today,home: uruguay.id, away: france.id, referee_id: @neil.id, stadium_id: @estadio_mineirao.id
+Match.create date: Date.today + 1,home: africa.id, away: uruguay.id, referee_id: @bill.id, stadium_id: @arena_de_saopaulo.id
+Match.create date: Date.today + 1,home: france.id, away: mexico.id, referee_id: @bill.id, stadium_id: @arena_de_saopaulo.id
+Match.create date: Date.today + 2,home: mexico.id, away: uruguay.id, referee_id: @hunk.id, stadium_id: @estadio_da_baixada.id
+Match.create date: Date.today + 3,home: france.id, away: africa.id, referee_id: @jimbates.id, stadium_id: @estadio_da_baixada.id
 
 
 

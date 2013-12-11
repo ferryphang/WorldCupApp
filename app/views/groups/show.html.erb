@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<h2>Group <%= @group.name %></h2>
+<table class="table table-striped">
+  <thead>
+    <th>Name</th>
+    <th>Win</th>
+    <th>Draw</th>
+    <th>Lose</th>
+    <th>Points</th>
+  </thead>
+  <tbody>
+  <% @group.standings.each do |standing| %>
+  <tr>
+    <td><%= standing.nation.name %></td>
+    <td><%= standing.win %></td>
+    <td><%= standing.draw %></td>
+    <td><%= standing.lose %></td>
+    <td><%= standing.point %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>

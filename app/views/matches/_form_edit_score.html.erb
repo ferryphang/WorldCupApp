@@ -1,0 +1,13 @@
+<%= form_for @match, method: :patch, url: match_path do |f| %>
+<p>
+  <%= f.label :score_home %>
+  <%= f.text_field :score_home %>
+</p>
+<p>
+  <%= f.label :score_away %>
+  <%= f.text_field :score_away %>
+</p>
+<p>
+  <%= f.submit "Update Score" %> 
+</p>
+<% end %>
