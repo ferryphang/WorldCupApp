@@ -16,6 +16,29 @@
       <%= f.label :nation %>
       <%= f.collection_select(:nation_id, Nation.all, :id, :name) %>
     </p>
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :date_of_birth %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :height %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :weight %>
+      <%= f.text_field :weight %>
+    </p>
+    <p>
+      <%= f.label :position %>
+      <%= f.collection_select(:position_id, Position.all, :id, :name) %>
+    </p>
+    <p>
+      <%= f.label :back_number %>
+    </p> 
     <%= f.submit %>
   </div>
 <% end %>
