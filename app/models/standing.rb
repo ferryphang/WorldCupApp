@@ -24,15 +24,21 @@ class Standing < ActiveRecord::Base
     @draw_match_count ||= (home_matches + away_matches).select {|match| match.score_home == match.score_away}.count
   end
 
+  def win
+    home_win_count + away_win_count
+  end
+
+  def draw
+    draw_match_count
+  end
+
+  def lose
+    home_lose_count + away_lose_count
+  end
+ 
   def point
     win * 3 + draw * 1 + lose * 0
   end
-
-  def update_statistic
-    self.win  = home_win_count + away_win_count
-    self.draw = draw_match_count
-    self.lose = home_lose_count + away_lose_count
-    self.save
-  end
+  
 
 end

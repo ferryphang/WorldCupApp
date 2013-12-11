@@ -22,7 +22,7 @@
     <% @players.each do |player| %>
       <tr>
         <td><%= player.id %></td>
-        <td><%= player.nation.name %></td>
+        <td><%= player.nation.name if player.nation %></td>
         <td><%= player.name %></td>
         <td><%= player.date_of_birth %></td>
         <td><%= player.height %></td>

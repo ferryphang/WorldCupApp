@@ -1,10 +1,12 @@
 <h1>Listing groups</h1>
 
+<%= link_to 'New Group', new_group_path %>
 <table class="table">
   <thead>
     <tr>
       <th>Group</th>
-      <th>Standing</th>
+      <th>Nations</th>
+      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -19,6 +21,7 @@
             <%= nation.name %>
           <% end %>
         </td>
+        <td><%= link_to 'Assign Nations', groups_id_assign_nations_path(group) %></td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,5 +31,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Group', new_group_path %>

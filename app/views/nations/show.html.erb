@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <p>Nation : <%= @nation.name %></p>
-<p>Coach : <%= @nation.coach.name %></p>
-<p>Group : <%= @nation.group.name %></p>
+<p>Coach : <%= @nation.coach.name if @nation.coach %></p>
+<p>Group : <%= @nation.group.name if @nation.group %></p>
 <p><%= @nation.profile %></p>
 <%= link_to 'Edit', edit_nation_path(@nation) %> |
 <%= link_to 'Back', nations_path %>

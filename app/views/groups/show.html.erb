@@ -12,9 +12,9 @@
   <% @group.standings.each do |standing| %>
   <tr>
     <td><%= standing.nation.name %></td>
-    <td><%= standing.win %></td>
-    <td><%= standing.draw %></td>
-    <td><%= standing.lose %></td>
+    <td><%= standing.home_win_count + standing.away_win_count %></td>
+    <td><%= standing.draw_match_count %></td>
+    <td><%= standing.home_lose_count + standing.away_lose_count %></td>
     <td><%= standing.point %></td>
   </tr>
   <% end %>

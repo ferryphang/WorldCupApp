@@ -124,9 +124,6 @@ ActiveRecord::Schema.define(version: 20131210102711) do
   create_table "standings", force: true do |t|
     t.integer  "group_id"
     t.integer  "nation_id"
-    t.integer  "win",        default: 0
-    t.integer  "draw",       default: 0
-    t.integer  "lose",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
