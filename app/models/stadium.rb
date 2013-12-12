@@ -5,4 +5,5 @@ class Stadium < ActiveRecord::Base
   # jadi sebuah pertandingan yang berbeda bisa terjadi pada satu stadium 
   has_many :matches
   validates :name , presence:true, uniqueness: true
+  paginates_per 10
 end

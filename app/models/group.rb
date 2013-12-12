@@ -4,4 +4,5 @@ class Group < ActiveRecord::Base
   # B = Jepang, Indonesia, Belanda
   has_many :standings
   has_many :nations, through: :standings
+  paginates_per 10
 end

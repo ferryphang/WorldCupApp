@@ -16,4 +16,6 @@ class Nation < ActiveRecord::Base
 
   validates :name , presence:true, uniqueness: true
   validates :profile, presence:true, length: { minimum: 10 }
+
+  paginates_per 10
 end

@@ -5,6 +5,7 @@ class Admin::RefereesController < Admin::AdministratorController
   # GET /referees.json
   def index
     @referees = Referee.all
+    @referees = Referee.order(:name).page params[:page]
   end
 
   # GET /referees/1

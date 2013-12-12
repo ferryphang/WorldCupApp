@@ -6,6 +6,7 @@ class Admin::NationsController < Admin::AdministratorController
   # GET /nations.json
   def index
     @nations = Nation.all
+    @nations = Nation.order(:name).page params[:page]
   end
 
   # GET /nations/1

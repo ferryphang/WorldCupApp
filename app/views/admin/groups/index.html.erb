@@ -8,7 +8,11 @@
   </script>
 <h1>Listing groups</h1>
 
+<button class="btn">
 <%= link_to 'New Group', new_admin_group_path %>
+</button>
+<br>
+
 <table class="table">
   <thead>
     <tr>
@@ -21,6 +25,7 @@
   </thead>
 
   <tbody>
+    <%= paginate @groups %>
     <% @groups.each do |group| %>
       <tr> 
         <td><%= group.name %></td>

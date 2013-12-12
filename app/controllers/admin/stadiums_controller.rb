@@ -5,6 +5,7 @@ class Admin::StadiumsController < Admin::AdministratorController
   # GET /stadiums.json
   def index
     @stadiums = Stadium.all
+    @stadiums = Stadium.order(:name).page params[:page]
     @hash = Gmaps4rails.build_markers(@stadiums) do |stadium, marker|
       marker.lat stadium.latitude
       marker.lng stadium.longitude
