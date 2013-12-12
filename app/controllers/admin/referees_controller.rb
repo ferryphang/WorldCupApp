@@ -28,7 +28,7 @@ class Admin::RefereesController < Admin::AdministratorController
 
     respond_to do |format|
       if @referee.save
-        format.html { redirect_to @referee, notice: 'Referee was successfully created.' }
+        format.html { redirect_to [:admin, @referee], notice: 'Referee was successfully created.' }
         format.json { render action: 'show', status: :created, location: @referee }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class Admin::RefereesController < Admin::AdministratorController
   def update
     respond_to do |format|
       if @referee.update(referee_params)
-        format.html { redirect_to @referee, notice: 'Referee was successfully updated.' }
+        format.html { redirect_to [:admin, @referee], notice: 'Referee was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -56,7 +56,7 @@ class Admin::RefereesController < Admin::AdministratorController
   def destroy
     @referee.destroy
     respond_to do |format|
-      format.html { redirect_to referees_url }
+      format.html { redirect_to admin_referees_url }
       format.json { head :no_content }
     end
   end
