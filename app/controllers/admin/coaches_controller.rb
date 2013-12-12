@@ -28,7 +28,7 @@ class Admin::CoachesController < Admin::AdministratorController
 
     respond_to do |format|
       if @coach.save
-        format.html { redirect_to @coach, notice: 'Coach was successfully created.' }
+        format.html { redirect_to [:admin, @coach], notice: 'Coach was successfully created.' }
         format.json { render action: 'show', status: :created, location: @coach }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class Admin::CoachesController < Admin::AdministratorController
   def update
     respond_to do |format|
       if @coach.update(coach_params)
-        format.html { redirect_to @coach, notice: 'Coach was successfully updated.' }
+        format.html { redirect_to [:admin, @coach], notice: 'Coach was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -56,7 +56,7 @@ class Admin::CoachesController < Admin::AdministratorController
   def destroy
     @coach.destroy
     respond_to do |format|
-      format.html { redirect_to coaches_url }
+      format.html { redirect_to admin_coaches_url }
       format.json { head :no_content }
     end
   end

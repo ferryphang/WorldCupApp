@@ -36,7 +36,7 @@ class Admin::StadiumsController < Admin::AdministratorController
 
     respond_to do |format|
       if @stadium.save
-        format.html { redirect_to @stadium, notice: 'Stadium was successfully created.' }
+        format.html { redirect_to [:admin, @stadium], notice: 'Stadium was successfully created.' }
         format.json { render action: 'show', status: :created, location: @stadium }
       else
         format.html { render action: 'new' }
@@ -50,7 +50,7 @@ class Admin::StadiumsController < Admin::AdministratorController
   def update
     respond_to do |format|
       if @stadium.update(stadium_params)
-        format.html { redirect_to @stadium, notice: 'Stadium was successfully updated.' }
+        format.html { redirect_to [:admin, @stadium], notice: 'Stadium was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -64,7 +64,7 @@ class Admin::StadiumsController < Admin::AdministratorController
   def destroy
     @stadium.destroy
     respond_to do |format|
-      format.html { redirect_to stadiums_url }
+      format.html { redirect_to admin_stadiums_url }
       format.json { head :no_content }
     end
   end
