@@ -5,8 +5,7 @@ WorldCupApp::Application.routes.draw do
   get "home/index"
   
   # Nations Page
-  get "nations/index"
-  # get "nations/:id/show"
+  resources :nations
 
   devise_for :users 
   

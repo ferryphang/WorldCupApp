@@ -19,4 +19,6 @@ class Player < ActiveRecord::Base
   validates :back_number, inclusion: { in: 1..23 }
 
   validates_associated :nation
+
+  paginates_per 10
 end

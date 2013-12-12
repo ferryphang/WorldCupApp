@@ -18,7 +18,9 @@
             <% group.standings.sorted.each do |standing| %>
             <tbody>
               <tr>
-                <td><%= standing.nation.name %></td>
+                
+                <td><%= link_to standing.nation.name, admin_nation_path(standing.nation.id)  %></td>
+
                 <td><%= standing.point %></td>
               </tr>
             </tbody>
@@ -26,5 +28,35 @@
         </table>      
       </div>
     <% end %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Listing matches</div>
+    <div class="panel-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @matches.each do |match| %>
+            <% if match.date == Date.today %>
+            <tr class="success">
+            <% elsif match.date < Date.today %>
+            <tr class="danger">
+            <% end %>
+              <td><%= match.date %></td>
+              <td><%= "#{match.home_team.name} VS #{match.away_team.name}" %></td>
+              <td><%= "#{match.score_home}:#{match.score_away}" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

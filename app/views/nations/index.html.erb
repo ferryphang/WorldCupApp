@@ -1,5 +1,5 @@
 <ul class="list-group">
   <% @nations.each do |nation| %>
-    <li class="list-group-item"><%= link_to "#{nation.name}", nations_show_path(nation) %></li>
+    <li class="list-group-item"><%= link_to "#{nation.name}", nation_path(nation) %></li>
   <% end %>
 </ul>

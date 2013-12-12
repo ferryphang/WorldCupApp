@@ -1,10 +1,11 @@
 class NationsController < ApplicationController
   
   def index
-    @nations = Nations.all
+    @nations = Nation.all
   end
 
-  def :id/show
-    @nations = Nation.find_by id: id
+  def show
+    @nation = Nation.find_by id: params[:id]
   end
+
 end

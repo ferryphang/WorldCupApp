@@ -1,2 +1,55 @@
-<h1>Nations#show</h1>
-<p>Find me in app/views/nations/show.html.erb</p>
+<h1><%= @nation.name %></h1>
+<div><%= @nation.profile %></div>
+
+
+<h2>Matches</h2>
+<table class="table">
+  <% @nation.home_matches.each do |match| %>
+  <tr>
+    <td><%= match.date %></td>
+    <td><%= "#{match.home_team.name} VS #{match.away_team.name}" %></td> 
+    <td><%= "#{match.score_home} : #{match.score_away}" %></td>
+  </tr>
+  <% end %>
+  <% @nation.away_matches.each do |match| %>
+  <tr>
+    <td><%= match.date %></td>
+    <td><%= "#{match.away_team.name} VS #{match.home_team.name} " %></td> 
+    <td><%= "#{match.score_away} : #{match.score_home}" %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nation</th>
+      <th>Name</th>
+      <th>Date Of Birth</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Position</th>
+      <th>Back Number</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nation.players.each do |player| %>
+      <tr>
+        <td><%= player.id %></td>
+        <td><%= player.nation.name if player.nation %></td>
+        <td><%= player.name %></td>
+        <td><%= player.date_of_birth %></td>
+        <td><%= player.height %></td>
+        <td><%= player.weight %></td>
+        <td><span class="<%= position(player.position_id) %>"><%= player.position.pos %></span></td>
+        <td><%= player.back_number %></td>       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
