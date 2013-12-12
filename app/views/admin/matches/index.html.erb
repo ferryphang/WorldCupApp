@@ -15,10 +15,10 @@
         <td><%= match.date %></td>
         <td><%= "#{match.home_team.name} VS #{match.away_team.name}" %></td>
         <td><%= "#{match.score_home}:#{match.score_away}" %></td>
-        <td><%= link_to 'Show', match %></td>
-        <td><%= link_to 'Edit', edit_match_path(match) %></td>
+        <td><%= link_to 'Show', admin_match_path(match) %></td>
+        <td><%= link_to 'Edit', edit_admin_match_path(match) %></td>
         <td><%= link_to 'Edit Score', "matches/#{match.id}/edit_score/",method: :get, :remote => true %></td>
-        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', admin_match_path(match), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 </div>
 <br>
 
-<%= link_to 'New Match', new_match_path %>
+<%= link_to 'New Match', new_admin_match_path %>

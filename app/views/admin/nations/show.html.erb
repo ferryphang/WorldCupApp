@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<p>Nation : <%= @nation.name %></p>
+<p>Coach : <%= @nation.coach.name if @nation.coach %></p>
+<p>Group : <%= @nation.group.name if @nation.group %></p>
+<p><%= @nation.profile %></p>
+<%= link_to 'Edit', edit_nation_path(@nation) %> |
+<%= link_to 'Back', nations_path %>
+
+<h2>Matches</h2>
+<table class="table">
+  <% @nation.home_matches.each do |match| %>
+  <tr>
+    <td><%= match.date %></td>
+    <td><%= "#{match.home_team.name} VS #{match.away_team.name}" %></td> 
+    <td><%= "#{match.score_home} : #{match.score_away}" %></td>
+  </tr>
+  <% end %>
+  <% @nation.away_matches.each do |match| %>
+  <tr>
+    <td><%= match.date %></td>
+    <td><%= "#{match.away_team.name} VS #{match.home_team.name} " %></td> 
+    <td><%= "#{match.score_away} : #{match.score_home}" %></td>
+  </tr>
+  <% end %>
+</table>
+
+<p></p>
+<p></p>

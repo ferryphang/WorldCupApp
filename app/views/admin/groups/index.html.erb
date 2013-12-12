@@ -1,0 +1,74 @@
+
+<script type="text/javascript">
+  <script>
+    $(function(){
+        $("table").stupidtable();
+        alert("OKE");
+    });
+  </script>
+<h1>Listing groups</h1>
+
+<%= link_to 'New Group', new_admin_group_path %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Nations</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr> 
+        <td><%= group.name %></td>
+        <td>
+          <% group.nations.each do |nation| %>
+            <%= nation.name %>
+          <% end %>
+        </td>
+        <!-- <td>link_to 'Assign Nations', admin_groups_id_assign_nations_path(group)</td> -->
+        <td><%= link_to 'Show', admin_group_path(group) %></td>
+        <td><%= link_to 'Edit', edit_admin_group_path(group) %></td>
+        <td><%= link_to 'Destroy', admin_group_path(group), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">Panel heading without title</div>
+  <div class="panel-body">
+    <% @groups.each do |group| %>
+      <div class="col-xs-6 col-sm-3">
+        <table class="table">
+          <thead>
+            <!-- <tr>
+               <th colspan="2" align="center"><strong>Group <%= group.name %></th>
+            </tr> -->
+            <tr>
+              <th data-sort="string">Team</th>
+              <th data-sort="int" data-sort-default="asc">Pts</th>
+            </tr>
+           
+          </thead>
+            <% group.standings.sorted.each do |standing| %>
+            <tbody>
+              <tr>
+                <td><%= standing.nation.name %></td>
+                <td><%= standing.point %></td>
+              </tr>
+            </tbody>
+            <% end %>
+        </table>      
+      </div>
+    <% end %>
+  </div>
+</div>
+
+

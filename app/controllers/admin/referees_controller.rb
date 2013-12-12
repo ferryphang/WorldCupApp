@@ -1,4 +1,4 @@
-class RefereesController < ApplicationController
+class Admin::RefereesController < ApplicationController
   before_action :set_referee, only: [:show, :edit, :update, :destroy]
 
   # GET /referees

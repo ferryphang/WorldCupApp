@@ -1,0 +1,26 @@
+<h1>Listing nations</h1>
+<%= link_to 'New Nation', new_admin_nation_path %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nations.each do |nation| %>
+      <tr>
+        <td><%= nation.name %></td>
+        <td><%= link_to 'Show', admin_nation_path(nation) %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to 'Edit', edit_admin_nation_path(nation) %></td>
+        <td><%= link_to 'Destroy', admin_nation_path(nation), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>  
+

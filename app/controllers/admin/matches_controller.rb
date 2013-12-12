@@ -1,4 +1,4 @@
-class MatchesController < ApplicationController
+class Admin::MatchesController < ApplicationController
   before_action :set_match, only: [:show, :edit, :update, :destroy, :edit_score]
   
   # GET /matches

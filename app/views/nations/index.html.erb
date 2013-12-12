@@ -1,26 +1,2 @@
-<h1>Listing nations</h1>
-<%= link_to 'New Nation', new_nation_path %>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @nations.each do |nation| %>
-      <tr>
-        <td><%= nation.name %></td>
-        <td><%= link_to 'Show', nation %></td>
-        <% if user_signed_in? %>
-        <td><%= link_to 'Edit', edit_nation_path(nation) %></td>
-        <td><%= link_to 'Destroy', nation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>  
-
+<h1>Nations#index</h1>
+<p>Find me in app/views/nations/index.html.erb</p>

@@ -1,4 +1,4 @@
-class StadiumsController < ApplicationController
+class Admin::StadiumsController < ApplicationController
   before_action :set_stadium, only: [:show, :edit, :update, :destroy]
 
   # GET /stadiums

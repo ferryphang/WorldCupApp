@@ -71,7 +71,7 @@
 @FW = Position.create name: "Forward Winger", pos: "FW"
 
 
-@tonydungy  = Coach.create name: "Tony Dungy", date_of_birth: "1978-02-21", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+# @tonydungy  = Coach.create name: "Tony Dungy", date_of_birth: "1978-02-21", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
 @changailey = Coach.create name: "Chan Gailey", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
 @thomas     = Coach.create name: "Thomas", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
 @wenger     = Coach.create name: "Wenger", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
