@@ -1,4 +1,4 @@
-<%= form_for(@coach) do |f| %>
+<%= form_for([:admin, @coach]) do |f| %>
   <% if @coach.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@coach.errors.count, "error") %> prohibited this coach from being saved:</h2>
@@ -40,6 +40,6 @@
       <%= f.label :achievement %>
       <%= f.text_area :achievement %>
     </p>
-    <%= f.submit %>
+    <%= f.submit "Save"%>
   </div>
 <% end %>

@@ -5,11 +5,19 @@ class Admin::StadiumsController < Admin::AdministratorController
   # GET /stadiums.json
   def index
     @stadiums = Stadium.all
+    @hash = Gmaps4rails.build_markers(@stadiums) do |stadium, marker|
+      marker.lat stadium.latitude
+      marker.lng stadium.longitude
+    end
   end
 
   # GET /stadiums/1
   # GET /stadiums/1.json
   def show
+    @hashs = Gmaps4rails.build_markers(@stadium) do |stadium, marker|
+      marker.lat stadium.latitude
+      marker.lng stadium.longitude
+    end
   end
 
   # GET /stadiums/new
@@ -69,6 +77,6 @@ class Admin::StadiumsController < Admin::AdministratorController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stadium_params
-      params[:stadium].permit(:name, :capacity, :city)
+      params[:stadium].permit(:latitude, :longitude, :name, :capacity, :city)
     end
 end

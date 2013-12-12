@@ -48,3 +48,6 @@ gem 'bootstrap-sass','~> 3.0.3.0'
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
+
+gem 'geocoder'
+gem 'gmaps4rails'

@@ -114,6 +114,8 @@ ActiveRecord::Schema.define(version: 20131210102711) do
   end
 
   create_table "stadiums", force: true do |t|
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "name"
     t.integer  "capacity"
     t.string   "city"
