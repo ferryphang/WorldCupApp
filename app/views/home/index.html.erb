@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Group Stage</div>
+  <div class="panel-body">
+    <% @groups.each do |group| %>
+      <% next if group.standings.count == 0 %>
+      <div class="col-xs-6 col-sm-3">
+        <table class="table">
+          <thead>
+            <!-- <tr>
+               <th colspan="2" align="center"><strong>Group <%= group.name %></th>
+            </tr> -->
+            <tr>
+              <th data-sort="string">Team <%= group.name %></th>
+              <th data-sort="int" data-sort-default="asc">Pts</th>
+            </tr>
+           
+          </thead>
+            <% group.standings.sorted.each do |standing| %>
+            <tbody>
+              <tr>
+                <td><%= standing.nation.name %></td>
+                <td><%= standing.point %></td>
+              </tr>
+            </tbody>
+            <% end %>
+        </table>      
+      </div>
+    <% end %>
+  </div>
+</div>

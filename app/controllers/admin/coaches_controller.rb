@@ -1,4 +1,4 @@
-class CoachesController < ApplicationController
+class Admin::CoachesController < Admin::AdministratorController
   before_action :set_coach, only: [:show, :edit, :update, :destroy]
 
   # GET /coaches

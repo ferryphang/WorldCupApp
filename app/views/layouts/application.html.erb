@@ -1,88 +1,105 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>WorldCupApp</title>
+<head>    
+  <!-- Define Charset -->
+  <meta charset="utf-8">
+  
+  <!-- Page Title -->
+  <title>Gym Club</title>
+  
+  <!-- Responsive Metatag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+     
+  <!-- CSS -->
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>        
+  <![endif]-->
+
+  <!-- Media queries -->
+  <!--[if lt IE 9]>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
 </head>
 <body>
-  <div class="container">
-  <div class="row clearfix">
-    <div class="col-md-12 column">
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">World Cup Admin</a>
+  <!-- Header -->
+  <header>
+    <!-- Main Menu -->
+    <div class="main-menu" >
+      <div class="main-menu-line" >
+        <div class="container">
+          <div class="row">
+            <nav class="navbar" role="navigation">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <!-- <h1 class="logo">
+                  <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Logo" /></a>
+                </h1>  --> 
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><%= link_to 'Sign In', new_user_session_path %></li>
+
+                  <li><a href="#">Nations</a></li>
+                  <li class="dropdown">
+                    <a href="trainers.html" class="dropdown-toggle">Trainers</a>
+                    <ul>
+                      <li><a href="trainers.html">All Trainers</a></li>
+                      <li><a href="single-trainer.html">Single Trainers</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div><!-- /.navbar-collapse -->
+            </nav>
+          </div>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-
-            <li>
-              <%= link_to 'Nations', admin_nations_path %>
-            </li>
-            <li>
-              <%= link_to 'Players', admin_players_path %>
-            </li>
-            <li>
-              <%= link_to 'Group', admin_groups_path %>
-            </li>
-            <li>
-              <%= link_to 'Coaches', admin_coaches_path %>
-            </li>
-            <li>
-              <%= link_to 'Referee', admin_referees_path %>
-            </li>
-            <li>
-              <%= link_to 'Stadiums', admin_stadiums_path %>
-            </li>
-            <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Matches<strong class="caret"></strong></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <%= link_to 'Group Stage', admin_matches_path %>
-                </li>
-                <li>
-                  <a href="#">Second Stage</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">Venue</a>
-            </li>
-          </li>
-          </ul>
-         <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li>
-              <a href="#"></a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Welcome <%= current_user.email %><strong class="caret"></strong>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-                </li>
-              </ul>
-            </li>
-          <% else %>
-            <li>
-            <%= link_to 'Login', new_user_session_path %>
-            </li>
-          <% end %>
-          </ul>
-        </div>  
-
-      </nav>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-       <%= yield %>
-
-     
+      </div>
     </div>
-  </div>
-</div>
+    <!-- End Main Menu -->
+  </header>   
+  <!-- End header -->
+
+  <!-- Content -->
+  <section id="home" >
+     
+    <!-- begin Intro -->
+    <article class="article-container" id="intro">
+      <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h2><strong>Go from where you are to where you want to be</strong></h2>
+          <p>If you put yourself in a position where you have to stretch outside your comfort zone, then you are forced to expand your consciousness.</p>
+          <button class="button-gym big-button">see our classes</button>
+        </div>
+      </div>
+      <%= yield %>
+
+      </div>
+    </article>
+    <!-- end Intro -->
+
+   
+
+   
+    
+   
+    
+  </section>
+  <!-- end content -->
+
   
+
 </body>
 </html>

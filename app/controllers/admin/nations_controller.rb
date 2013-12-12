@@ -1,4 +1,4 @@
-class Admin::NationsController < ApplicationController
+class Admin::NationsController < Admin::AdministratorController
   before_action :set_nation, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 

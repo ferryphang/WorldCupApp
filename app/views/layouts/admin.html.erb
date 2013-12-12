@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>WorldCupApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "admin/application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -18,36 +18,33 @@
           <ul class="nav navbar-nav">
 
             <li>
-              <%= link_to 'Nations', nations_path %>
+              <%= link_to 'Nations', admin_nations_path %>
             </li>
             <li>
-              <%= link_to 'Players', players_path %>
+              <%= link_to 'Players', admin_players_path %>
             </li>
             <li>
-              <%= link_to 'Group', groups_path %>
+              <%= link_to 'Group', admin_groups_path %>
             </li>
             <li>
-              <%= link_to 'Coaches', coaches_path %>
+              <%= link_to 'Coaches', admin_coaches_path %>
             </li>
             <li>
-              <%= link_to 'Referee', referees_path %>
+              <%= link_to 'Referee', admin_referees_path %>
             </li>
             <li>
-              <%= link_to 'Stadiums', stadiums_path %>
+              <%= link_to 'Stadiums', admin_stadiums_path %>
             </li>
             <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Matches<strong class="caret"></strong></a>
               <ul class="dropdown-menu">
                 <li>
-                  <%= link_to 'Group Stage', matches_path %>
+                  <%= link_to 'Group Stage', admin_matches_path %>
                 </li>
                 <li>
                   <a href="#">Second Stage</a>
                 </li>
               </ul>
-            </li>
-            <li>
-              <a href="#">Venue</a>
             </li>
           </li>
           </ul>

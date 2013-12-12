@@ -1,5 +1,5 @@
 <h1>Listing players</h1>
-<%= link_to 'New Player', new_player_path %>
+<%= link_to 'New Player', new_admin_player_path %>
 
 <table class="table">
   <thead>
@@ -29,9 +29,9 @@
         <td><%= player.weight %></td>
         <td><span class="<%= position(player.position_id) %>"><%= player.position.pos %></span></td>
         <td><%= player.back_number %></td>
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', admin_player_path(player) %></td>
+        <td><%= link_to 'Edit', edit_admin_player_path(player) %></td>
+        <td><%= link_to 'Destroy', admin_player_path(player), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

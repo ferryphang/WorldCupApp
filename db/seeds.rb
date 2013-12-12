@@ -63,6 +63,7 @@
 @g_e = Group.create name: "E"
 @g_f = Group.create name: "F"
 @g_g = Group.create name: "G"
+@g_h = Group.create name: "H"
 
 
 @GK = Position.create name: "Goal Keeper", pos: "GK"
@@ -129,8 +130,8 @@
 @clark    = Referee.create name: "Clack", nation: "Australia"
 
 require 'open-uri'
-# team_id = [43843,43922,43976,43924,43849,43925,43854,43941,43942,43946,43948,43860,43949,43909,43954,43819,43821,43822,43911,43960,43978,43876,43928,43963,1902465,44002,43968,43883,43969,43971,43930,43921]
-team_id = [43883,43930,43946,43911]
+team_id = [43843,43922,43976,43924,43849,43925,43854,43941,43942,43946,43948,43860,43949,43909,43954,43819,43821,43822,43911,43960,43978,43876,43928,43963,1902465,44002,43968,43883,43969,43971,43930,43921]
+# team_id = [43883,43930,43946,43911]
 
 team_id.each_with_index do |id,index|
   puts '-' * 100
@@ -164,15 +165,44 @@ end
     Nation.find(i).coach = Coach.find(i)
 end
 
-ga = Group.first
+
 africa = Nation.find_by name: "South Africa"
 uruguay = Nation.find_by name: "Uruguay"
 france = Nation.find_by name: "France"
 mexico = Nation.find_by name: "Mexico"
-ga.nations << africa
-ga.nations << uruguay
-ga.nations << france
-ga.nations << mexico
+team = {}
+team['a'] = ["South Africa", "Uruguay", "France", "Mexico"]
+team['b'] = ["Argentina", "Korea Republic", "Greece", "Nigeria"]
+team['c'] = ["England", "Algeria", "Slovenia", "USA"]
+team['d'] = ["Germany", "Serbia", "Ghana", "Australia"]
+team['e'] = ["Netherlands", "Japan", "Cameroon", "Denmark"]
+team['f'] = ["Italy", "Algeria", "Slovenia", "USA"]
+team['g'] = ["England", "Algeria", "Slovenia", "USA"]
+team['h'] = ["England", "Algeria", "Slovenia", "USA"]
+
+argentina = Nation.find_by name: "Argentina"
+korea_republic = Nation.find_by name: "Korea Republic"
+greece = Nation.find_by name: "Greece"
+nigeria = Nation.find_by name: "Nigeria"
+
+
+england = Nation.find_by name: "England"
+algeria = Nation.find_by name: "Algeria"
+slovenia = Nation.find_by name: "Slovenia"
+usa = Nation.find_by name: "USA"
+
+@g_a.nations << africa
+@g_a.nations << uruguay
+@g_a.nations << france
+@g_a.nations << mexico
+
+@g_b.nations << argentina
+@g_b.nations << korea_republic
+@g_b.nations << greece
+@g_b.nations << nigeria
+
+
+
 
 
 Match.create date: Date.today,home: africa.id, away: mexico.id, referee_id: @hunk.id, stadium_id: @arena_de_saopaulo.id

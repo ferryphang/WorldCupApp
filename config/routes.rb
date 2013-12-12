@@ -1,7 +1,8 @@
 WorldCupApp::Application.routes.draw do
+  get "home/index"
   get "nations/index"
   get "nations/show"
-  root 'nations#index'
+  root 'home#index'
   devise_for :users 
   
   namespace 'admin' do 
