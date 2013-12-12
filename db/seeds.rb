@@ -104,6 +104,7 @@
 @wade       = Coach.create name: "Wade", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
 @greg       = Coach.create name: "Greg", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
 @bruce      = Coach.create name: "Bruce", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
+@janacek     = Coach.create name: "Janacek", date_of_birth: "1923-01-23", country: "Australia", height: 190, weight: 86, achievement:" 2012 2009"
 
 
 
@@ -166,44 +167,26 @@ end
 end
 
 
-africa = Nation.find_by name: "South Africa"
-uruguay = Nation.find_by name: "Uruguay"
-france = Nation.find_by name: "France"
-mexico = Nation.find_by name: "Mexico"
+
 team = {}
-team['a'] = ["South Africa", "Uruguay", "France", "Mexico"]
-team['b'] = ["Argentina", "Korea Republic", "Greece", "Nigeria"]
-team['c'] = ["England", "Algeria", "Slovenia", "USA"]
-team['d'] = ["Germany", "Serbia", "Ghana", "Australia"]
-team['e'] = ["Netherlands", "Japan", "Cameroon", "Denmark"]
-team['f'] = ["Italy", "Algeria", "Slovenia", "USA"]
-team['g'] = ["England", "Algeria", "Slovenia", "USA"]
-team['h'] = ["England", "Algeria", "Slovenia", "USA"]
+team['A'] = ["South Africa", "Uruguay", "France", "Mexico"]
+team['C'] = ["England", "Algeria", "Slovenia", "USA"]
+team['D'] = ["Germany", "Serbia", "Ghana", "Australia"]
+team['B'] = ["Argentina", "Korea Republic", "Greece", "Nigeria"]
+team['E'] = ["Netherlands", "Japan", "Cameroon", "Denmark"]
+team['F'] = ["Italy", "New Zealand", "Slovakia", "Paraguay"]
+team['G'] = ["Côte d'Ivoire", "Brazil", "Portugal", "Korea DPR"]
+team['H'] = ["Honduras", "Spain", "Chile", "Switzerland"]
 
-argentina = Nation.find_by name: "Argentina"
-korea_republic = Nation.find_by name: "Korea Republic"
-greece = Nation.find_by name: "Greece"
-nigeria = Nation.find_by name: "Nigeria"
-
-
-england = Nation.find_by name: "England"
-algeria = Nation.find_by name: "Algeria"
-slovenia = Nation.find_by name: "Slovenia"
-usa = Nation.find_by name: "USA"
-
-@g_a.nations << africa
-@g_a.nations << uruguay
-@g_a.nations << france
-@g_a.nations << mexico
-
-@g_b.nations << argentina
-@g_b.nations << korea_republic
-@g_b.nations << greece
-@g_b.nations << nigeria
-
-
-
-
+team.each do |group,nations|
+  g = Group.find_by name: "#{group}"
+  puts "Get group #{g.name}"
+    nations.each do |nation|
+      nation = Nation.find_by name: "#{nation}"
+      g.nations << nation
+      puts "Insert #{nation.name} to group #{g.name}"
+    end
+end
 
 Match.create date: Date.today,home: africa.id, away: mexico.id, referee_id: @hunk.id, stadium_id: @arena_de_saopaulo.id
 Match.create date: Date.today,home: uruguay.id, away: france.id, referee_id: @neil.id, stadium_id: @estadio_mineirao.id
@@ -212,5 +195,6 @@ Match.create date: Date.today + 1,home: france.id, away: mexico.id, referee_id: 
 Match.create date: Date.today + 2,home: mexico.id, away: uruguay.id, referee_id: @hunk.id, stadium_id: @estadio_da_baixada.id
 Match.create date: Date.today + 3,home: france.id, away: africa.id, referee_id: @jimbates.id, stadium_id: @estadio_da_baixada.id
 
-
-
+Match.create date: Date.today,home: argentina.id, away: nigeria.id, referee_id: @hunk.id, stadium_id: @arena_de_saopaulo.id
+Match.create date: Date.today,home: argentina.id, away: nigeria.id, referee_id: @hunk.id, stadium_id: @arena_de_saopaulo.id
+Match.create date: Date.today,home: argentina.id, away: nigeria.id, referee_id: @hunk.id, stadium_id: @arena_de_saopaulo.id
