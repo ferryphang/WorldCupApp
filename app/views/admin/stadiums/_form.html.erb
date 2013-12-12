@@ -1,4 +1,4 @@
-<%= form_for(@stadium) do |f| %>
+<%= form_for([:admin, @stadium]) do |f| %>
   <% if @stadium.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@stadium.errors.count, "error") %> prohibited this stadium from being saved:</h2>
@@ -13,6 +13,14 @@
 
   <div class="actions">
     <p>
+      <%= f.label :latitude %>
+      <%= f.text_field :latitude %>
+    </p>
+    <p>
+      <%= f.label :longitude %>
+      <%= f.text_field :longitude %>
+    </p>
+    <p>
       <%= f.label :name %>
       <%= f.text_field :name %>
     </p>
@@ -24,6 +32,6 @@
       <%= f.label :city %>
       <%= f.text_field :city %>
     </p>
-    <%= f.submit %>
+    <%= f.submit "Save" %>
   </div>
 <% end %>

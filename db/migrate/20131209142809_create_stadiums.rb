@@ -1,9 +1,11 @@
 class CreateStadiums < ActiveRecord::Migration
   def change
     create_table :stadiums do |t|
-    	t.string :name
+      t.float   :latitude
+      t.float   :longitude
+    	t.string  :name
       t.integer :capacity
-      t.string :city
+      t.string  :city
       t.timestamps
     end
   end

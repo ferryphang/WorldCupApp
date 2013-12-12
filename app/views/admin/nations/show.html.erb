@@ -3,8 +3,8 @@
 <p>Coach : <%= @nation.coach.name if @nation.coach %></p>
 <p>Group : <%= @nation.group.name if @nation.group %></p>
 <p><%= @nation.profile %></p>
-<%= link_to 'Edit', edit_nation_path(@nation) %> |
-<%= link_to 'Back', nations_path %>
+<%= link_to 'Edit', edit_admin_nation_path(@nation) %> |
+<%= link_to 'Back', admin_nations_path %>
 
 <h2>Matches</h2>
 <table class="table">
