@@ -28,11 +28,7 @@ class Admin::MatchesController < Admin::AdministratorController
 
     respond_to do |format|
       if @match.save
-<<<<<<< HEAD
-        format.html { redirect_to admin_matches_path, notice: 'Match was successfully created.' }
-=======
         format.html { redirect_to [:admin, @match], notice: 'Match was successfully created.' }
->>>>>>> 11d3343324edb1636e2a09bc4b976eb632578a27
         format.json { render action: 'show', status: :created, location: @match }
       else
         format.html { render action: 'new' }
@@ -46,11 +42,7 @@ class Admin::MatchesController < Admin::AdministratorController
   def update
     respond_to do |format|
       if @match.update(match_params)
-<<<<<<< HEAD
-        format.html { redirect_to admin_match_path, notice: 'Match was successfully updated.' }
-=======
         format.html { redirect_to [:admin, @match], notice: 'Match was successfully updated.' }
->>>>>>> 11d3343324edb1636e2a09bc4b976eb632578a27
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

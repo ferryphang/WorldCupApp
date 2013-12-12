@@ -19,7 +19,7 @@
             <tbody>
               <tr>
                 
-                <td><%= link_to standing.nation.name, admin_nation_path(standing.nation.id)  %></td>
+                <td><%= link_to standing.nation.name, nation_path(standing.nation.id)  %></td>
 
                 <td><%= standing.point %></td>
               </tr>
@@ -51,7 +51,7 @@
             <tr class="danger">
             <% end %>
               <td><%= match.date %></td>
-              <td><%= "#{match.home_team.name} VS #{match.away_team.name}" %></td>
+              <td><%= link_to "#{match.home_team.name} VS #{match.away_team.name}", matches_path(match)  %> </td>
               <td><%= "#{match.score_home}:#{match.score_away}" %></td>
             </tr>
           <% end %>

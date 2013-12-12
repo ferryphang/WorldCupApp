@@ -1,11 +1,15 @@
 WorldCupApp::Application.routes.draw do
-  root 'home#index'
   
+  root 'home#index'
+
   # Home Page
   get "home/index"
   
   # Nations Page
   resources :nations
+
+  # Matches Page
+  resources :matches
 
   devise_for :users 
   
