@@ -1,5 +1,9 @@
 <h1>Listing referees</h1>
+
+<button class="btn">
 <%= link_to 'New Referee', new_admin_referee_path %>
+</button>
+<br>
 
 <table class="table">
   <thead>
@@ -12,6 +16,7 @@
   </thead>
 
   <tbody>
+    <%= paginate @referees %>
     <% @referees.each do |referee| %>
       <tr>
       <td><%= referee.id %></td>

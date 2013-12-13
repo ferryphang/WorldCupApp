@@ -5,4 +5,5 @@ class Coach < ActiveRecord::Base
   validates :name , presence:true, uniqueness: true
   validates :achievement, presence:true, length: { minimum: 10 }
   # validates :nation_id, uniqueness: true
+  paginates_per 10
 end

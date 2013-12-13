@@ -5,6 +5,7 @@ class Admin::PlayersController < Admin::AdministratorController
   # GET /players.json
   def index
     @players = Player.all
+    @players = Player.order(:name).page params[:page]
   end
 
   # GET /players/1

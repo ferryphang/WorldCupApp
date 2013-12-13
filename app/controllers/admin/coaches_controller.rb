@@ -5,6 +5,7 @@ class Admin::CoachesController < Admin::AdministratorController
   # GET /coaches.json
   def index
     @coaches = Coach.all
+    @coaches = Coach.order(:name).page params[:page]
   end
 
   # GET /coaches/1

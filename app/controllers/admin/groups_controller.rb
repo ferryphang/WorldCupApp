@@ -5,6 +5,7 @@ class Admin::GroupsController < Admin::AdministratorController
   # GET /groups.json
   def index
     @groups = Group.all
+    @groups = Group.order(:name).page params[:page]
   end
 
   # GET /groups/1
