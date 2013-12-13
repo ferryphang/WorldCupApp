@@ -4,9 +4,7 @@ class Standing < ActiveRecord::Base
   has_many   :home_matches, through: :nation, conditions: "score_home IS NOT NULL"
   has_many   :away_matches, through: :nation, conditions: "score_home IS NOT NULL"
 
-  def self.sorted
-    all.sort { |a, b| b.point <=> a.point }
-  end
+  default_scope {order("point asc")}
 
   def home_win_count
     @home_win_count ||= home_matches.select { |match| match.score_home > match.score_away }.count
