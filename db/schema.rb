@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< Updated upstream
 ActiveRecord::Schema.define(version: 20131213041821) do
-=======
-ActiveRecord::Schema.define(version: 20131213041020) do
->>>>>>> Stashed changes
 
   create_table "coaches", force: true do |t|
     t.integer  "nation_id"

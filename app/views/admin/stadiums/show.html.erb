@@ -8,6 +8,7 @@
 <p>name      : <%= @stadium.name %></p>
 <p>capacity  : <%= @stadium.capacity %></p>
 <p>city      : <%= @stadium.city %></p>
+<td><%= image_tag @stadium.avatar.url(:medium) %></td>
 
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>

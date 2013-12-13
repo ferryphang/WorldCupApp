@@ -31,7 +31,7 @@
         <td><%= stadium.name %></td>
         <td><%= stadium.capacity %></td>
         <td><%= stadium.city %></td>
-        <td><%= image_tag stadium.avatar.url(:medium) %></td>
+        <td><%= image_tag stadium.avatar.url(:thumb) %></td>
         <td>
           <%= link_to 'Show', admin_stadium_path(stadium) %> |
           <%= link_to 'Edit', edit_admin_stadium_path(stadium) %> |

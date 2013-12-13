@@ -36,8 +36,10 @@
        <h3>Referee : <%= @match.referee.name %></h3>
        <h3>Stadium : <%= @match.stadium.name %></h3>
        <% if @match.score_home && @match.score_away %>
-        <h3>SCORE : <%= "#{@match.score_home} : #{@match.score_away}" %></h3>
+        <h3><%= "#{@match.score_home} : #{@match.score_away}" %></h3>
        <% end %>
+        <%= image_tag @match.stadium.avatar.url(:medium) %>
+        <hr/>
           <div id="map" style='height: 400px;'></div>
       </div>
     </div>

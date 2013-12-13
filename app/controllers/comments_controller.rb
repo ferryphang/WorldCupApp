@@ -9,12 +9,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    puts "OOOKKEEE"
-    puts params
     @comment = Comment.new(comment_params)
-    puts @comment.email
     @comment.save
-
+    redirect_to match_path(params[:match_id])
   end
 
   private
