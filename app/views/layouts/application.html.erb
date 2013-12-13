@@ -13,6 +13,12 @@
   <!-- CSS -->
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+  *{
+    font-family: 'Varela Round', sans-serif;
+  }
+  </style>
   <%= csrf_meta_tags %>
 
 
@@ -61,16 +67,9 @@
                     <%= link_to 'Login', new_user_session_path %>
                     </li>
                   <% end %>
-                  <li><%= link_to 'Sign In', new_user_session_path %></li>
 
                   <li><%= link_to 'Nations', nations_path %></a></li>
-                  <li class="dropdown">
-                    <a href="trainers.html" class="dropdown-toggle">Trainers</a>
-                    <ul>
-                      <li><a href="trainers.html">All Trainers</a></li>
-                      <li><a href="single-trainer.html">Single Trainers</a></li>
-                    </ul>
-                  </li>
+
                 </ul>
               </div><!-- /.navbar-collapse -->
             </nav>
@@ -88,6 +87,7 @@
     <!-- begin Intro -->
     <article class="article-container" id="intro">
       <div class="container">
+        
         <%= yield %>
 
       </div>

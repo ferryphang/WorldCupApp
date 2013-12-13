@@ -5,6 +5,8 @@ class Match < ActiveRecord::Base
   # Sebuah pertandingan sudah pasti hanya memiliki satu stadium
   belongs_to :stadium
  
+   has_many :comments
+
   # Satu Pertandingan hanya memiliki satu negara home
   # Satu Pertandingan hanya memiliki satu negara away
   # PS: Maksudnya adalah Match hanya punya satu 'Nation' yang foreign_key nation_id mengacu ke home

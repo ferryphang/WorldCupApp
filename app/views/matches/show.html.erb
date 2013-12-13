@@ -33,12 +33,11 @@
       <div class="view">
         <h2 contenteditable="true">VERSUS</h2>
         <h2>Match: <%= @match.date %></h2>
-        <% if !@match.stadium %>
-        <h3>Stadium : <%= @match.stadium.name %></h3>
-        <% end %>
-        <% if !@match.referee %>
-        <h3>Referee : <%= @match.referee.name if @match.referee  %></h3>
-        <% end %>
+       <h3>Referee : <%= @match.referee.name %></h3>
+       <h3>Stadium : <%= @match.stadium.name %></h3>
+       <% if @match.score_home && @match.score_away %>
+        <h3>SCORE : <%= "#{@match.score_home} : #{@match.score_away}" %></h3>
+       <% end %>
           <div id="map" style='height: 400px;'></div>
       </div>
     </div>
@@ -71,6 +70,24 @@
   </div>
 </div>
 
+<h2>Comments</h2>
+<%= link_to "New Comment", new_match_comment_path(@match), :remote => true  %>
+<div id="new_comment"></div>
+
+<% @match.comments.each do |com| %>
+<div class="media">
+
+  <a class="pull-left" href="#">
+    <%= gravatar_for(com.email) %>
+  </a>
+  <div class="media-body">
+    <div class="media-title pull-left"><strong><%= com.email %></strong></div>
+    <p align="left"><i>, <%= com.created_at %></i></p>
+        <p align="left"><%= com.comment %></p>
+
+  </div>
+</div>
+<% end %>
 <script type="text/javascript">
   handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){

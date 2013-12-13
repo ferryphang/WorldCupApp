@@ -52,4 +52,4 @@ gem 'debugger', group: [:development, :test]
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'kaminari'
-gem 'acts_as_commentable'
+gem 'gravatar-ultimate'

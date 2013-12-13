@@ -23,17 +23,16 @@
        <%= f.label :away %>
       <%= f.collection_select(:away, Nation.all, :id, :name) %>
     </p>
+
     <p>
-      <%= f.label :score_home %>
-      <%= f.text_field :score_home %>
+      <%= f.label :stadium %>
+      <%= f.collection_select(:stadium_id, Stadium.all, :id, :name) %>
     </p>
     <p>
-      <%= f.label :score_away %>
-      <%= f.text_field :score_away %>
+      <%= f.label :referee %>
+      <%= f.collection_select(:referee_id, Referee.all, :id, :name) %>
     </p>
-    <p>
-     
-    </p>
+
     <%= f.submit %>
   </div>
 <% end %>

@@ -1,11 +1,14 @@
 WorldCupApp::Application.routes.draw do
   
+  get "comments/new"
   root 'home#index'
 
   # User Page
   resources :home
   resources :nations
-  resources :matches
+  resources :matches do 
+    resources :comments
+  end
 
   # Devise
   devise_for :users 
