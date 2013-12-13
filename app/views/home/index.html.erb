@@ -51,7 +51,7 @@
             <tr class="danger">
             <% end %>
               <td><%= match.date %></td>
-              <td><%= link_to "#{match.home_team.name} VS #{match.away_team.name}", matches_path(match)  %> </td>
+              <td><%= link_to "#{match.home_team.name} VS #{match.away_team.name}", match_path(match), 'data-no-turbolink' => true  %> </td>
               <td><%= "#{match.score_home}:#{match.score_away}" %></td>
             </tr>
           <% end %>

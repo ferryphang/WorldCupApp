@@ -2,17 +2,15 @@ WorldCupApp::Application.routes.draw do
   
   root 'home#index'
 
-  # Home Page
-  get "home/index"
-  
-  # Nations Page
+  # User Page
+  resources :home
   resources :nations
-
-  # Matches Page
   resources :matches
 
+  # Devise
   devise_for :users 
   
+  # Admin Page
   namespace 'admin' do 
     resources :nations, :players, :coaches, :referees, :stadiums, :groups, :matches
     get '/matches/:id/edit_score', to: 'matches#edit_score'
