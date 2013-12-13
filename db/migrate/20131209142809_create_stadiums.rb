@@ -6,6 +6,7 @@ class CreateStadiums < ActiveRecord::Migration
     	t.string  :name
       t.integer :capacity
       t.string  :city
+
       t.timestamps
     end
   end

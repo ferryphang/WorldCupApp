@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< Updated upstream
 ActiveRecord::Schema.define(version: 20131213041821) do
+=======
+ActiveRecord::Schema.define(version: 20131213041020) do
+>>>>>>> Stashed changes
 
   create_table "coaches", force: true do |t|
     t.integer  "nation_id"
@@ -130,6 +134,10 @@ ActiveRecord::Schema.define(version: 20131213041821) do
     t.string   "city"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "standings", force: true do |t|

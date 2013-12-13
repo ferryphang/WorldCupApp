@@ -12,6 +12,9 @@ class Admin::StadiumsController < Admin::AdministratorController
     end
   end
 
+  def create
+  end
+
   # GET /stadiums/1
   # GET /stadiums/1.json
   def show
@@ -78,6 +81,6 @@ class Admin::StadiumsController < Admin::AdministratorController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stadium_params
-      params[:stadium].permit(:latitude, :longitude, :name, :capacity, :city)
+      params[:stadium].permit(:latitude, :longitude, :name, :capacity, :city, :avatar)
     end
 end

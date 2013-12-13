@@ -53,3 +53,5 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'kaminari'
 gem 'gravatar-ultimate'
+gem 'paperclip'
+

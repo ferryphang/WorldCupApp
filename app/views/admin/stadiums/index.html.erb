@@ -16,6 +16,7 @@
       <th>Name</th>
       <th>Capacity</th>
       <th>City</th>
+      <th>Picture</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -30,6 +31,7 @@
         <td><%= stadium.name %></td>
         <td><%= stadium.capacity %></td>
         <td><%= stadium.city %></td>
+        <td><%= image_tag stadium.avatar.url(:medium) %></td>
         <td>
           <%= link_to 'Show', admin_stadium_path(stadium) %> |
           <%= link_to 'Edit', edit_admin_stadium_path(stadium) %> |

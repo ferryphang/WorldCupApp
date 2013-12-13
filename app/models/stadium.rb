@@ -6,4 +6,6 @@ class Stadium < ActiveRecord::Base
   has_many :matches
   validates :name , presence:true, uniqueness: true
   paginates_per 10
+
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 end
